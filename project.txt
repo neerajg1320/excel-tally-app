@@ -269,3 +269,10 @@ $ npx asar extract /Users/neeraj/Projects/Glassball/Production/excel-tally-produ
 Commands to make package .dmg
 lerna run build --scope=react-tally-ui
 lerna run build --scope=electron-tally
+
+Added script to build both apps
+"build": "lerna run build --scope=react-tally-ui && lerna run build --scope=electron-tally"
+
+
+# We have the package built successfully !
+
