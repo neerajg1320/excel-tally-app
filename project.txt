@@ -1,0 +1,80 @@
+# This project is a recreation of the project excel-tally-production-first.
+# That project is having some issues with electron-forge.
+# We will use the project.cmd file from there and create this new project
+
+# Create the project folder:
+
+mkdir excel-tally-production
+cd excel-tally-production
+lerna init
+touch project.txt
+
+excel-tally-production/ $ ls
+lerna.json	package.json	packages	project.txt
+excel-tally-production/ $
+
+# Set up the packages
+mkdir packages/apps
+
+## Create electron application
+#
+
+# Now we will create the electron app manually and verify the behaviour
+$ cd packages/apps
+$ npx create-electron-app electron-tally
+
+# https://github.com/electron/forge/issues/869
+Modify excel-tally-production/package.json
+{
+  "name": "root",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/apps/*"
+    ],
+    "nohoist": [
+      "**/electron**"
+    ]
+  },
+
+  "devDependencies": {
+    "lerna": "^6.4.1"
+  }
+}
+
+# We can see that our package is listed correctly.
+excel-tally-production/ $ lerna list
+electron-tally
+excel-tally-production/ $
+
+$ cd packages/apps/electron-tally
+$ npm start
+
+It is working!
+
+## Create react application
+#
+
+lerna  create react-ui --yes
+mv packages/react-ui packages/apps
+cd packages/apps/react-ui
+npx create-react-app .
+
+# We can see that the hoisting has been achieved, so our nohoist flag hasn't worked!
+apps/ $ du -d 1 -h
+4.3M	./react-ui
+ 28K	./electron-tally
+4.3M	.
+apps/ $
+
+# The react-app scaffold is working !
+
+
+
+
+
+
+
+
+
+
