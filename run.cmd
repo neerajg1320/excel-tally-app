@@ -1,0 +1,2 @@
+# Development mode
+npm start

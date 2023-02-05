@@ -121,9 +121,12 @@ const isDev = require('electron-is-dev');
 
 npm install --save-dev  concurrently wait-on cross-env
 
+# Commit
+git remote add origin git@github.com:neeraj76/excel-tally-app.git
+git push -u origin master
 
-
-
-
+# We have commited the development app for electron and react
+# We can start the app using
+npm start
 
 
