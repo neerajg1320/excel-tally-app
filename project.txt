@@ -69,8 +69,57 @@ apps/ $
 
 # The react-app scaffold is working !
 
+Now we will add support for react app which in development mode
+$ npm install electron-is-dev
 
+const isDev = require('electron-is-dev');
 
+  if (isDev) {
+    const clientPort = 3000;
+    mainWindow.loadURL(`http://localhost:${clientPort}`)
+        .then(response => {
+
+        })
+        .catch(error => {
+          if (error.code === 'ERR_CONNECTION_REFUSED') {
+            mainWindow.loadFile(path.join(__dirname, 'error.html'));
+            return;
+          }
+
+          throw error;
+        });
+  } else {
+    mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  }
+
+# Now we will modify the <project> package.json
+
+# error.html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+<h1>💖 Hello World!</h1>
+<p>This application depends on a react application.</p>
+<p>You should try running this from container project</p>
+</body>
+</html>
+
+# Now we will add the scripts in <project>/package.json to run the two together:
+
+  "scripts": {
+    "react-ui:no-browser": "cross-env BROWSER=none npm run react-ui",
+    "react-ui": "lerna run start --scope=react-ui",
+    "electron-app:after:react-ui": "wait-on tcp:3000 && npm run electron-app",
+    "electron-app": "lerna run start --scope=electron-tally",
+    "start": "concurrently -k \"npm run react-ui:no-browser\" \"npm run electron-app:after:react-ui\" "
+  },
+
+npm install --save-dev  concurrently wait-on cross-env
 
 
 

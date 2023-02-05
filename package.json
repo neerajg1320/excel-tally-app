@@ -1,6 +1,13 @@
 {
   "name": "root",
   "private": true,
+  "scripts": {
+    "react-ui:no-browser": "cross-env BROWSER=none npm run react-ui",
+    "react-ui": "lerna run start --scope=react-ui",
+    "electron-app:after:react-ui": "wait-on tcp:3000 && npm run electron-app",
+    "electron-app": "lerna run start --scope=electron-tally",
+    "start": "concurrently -k \"npm run react-ui:no-browser\" \"npm run electron-app:after:react-ui\" "
+  },
   "workspaces": {
     "packages": [
       "packages/apps/*"
@@ -9,9 +16,10 @@
       "**/electron**"
     ]
   },
-
   "devDependencies": {
-    "lerna": "^6.4.1"
+    "concurrently": "^7.6.0",
+    "cross-env": "^7.0.3",
+    "lerna": "^6.4.1",
+    "wait-on": "^7.0.1"
   }
 }
-
