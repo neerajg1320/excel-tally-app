@@ -1,7 +1,7 @@
 {
   "name": "electron-tally",
   "productName": "electron-tally",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
@@ -10,7 +10,8 @@
     "make": "electron-forge make",
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
-    "build-installer:m": "electron-builder -m"
+    "build-installer:m": "electron-builder -m",
+    "build": "npm run build-installer:m"
   },
   "keywords": [],
   "author": {
@@ -21,7 +22,7 @@
   "dependencies": {
     "electron-is-dev": "^2.0.0",
     "electron-squirrel-startup": "^1.0.0",
-    "react-ui": "^0.1.0"
+    "react-tally-ui": "^0.1.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.4",
@@ -37,6 +38,7 @@
     "productName": "TallyMate",
     "copyright": "Neeraj Gupta",
     "mac": {
+      "identity": null,
       "target": [
         {
           "target": "default",

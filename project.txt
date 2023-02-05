@@ -216,3 +216,52 @@ To use the electron-builder, electron-forge etc we have to use in the <project> 
     ]
   },
 
+# Our build is created we have to use npx asar to see package contents
+npx asar extract app.asar ~/tmp
+
+# This shows that we haven't put the dist folder in app.asar but the src and the other folders. We need to fix this problem
+
+# we can see that react-tally-ui is added as dependency in electron-app
+
+electron-tally/ $ npm list react-tally-ui
+root@ /Users/neeraj/Projects/Glassball/Production/excel-tally-production
+└─┬ electron-tally@0.0.1 -> ./packages/apps/electron-tally
+  └── react-tally-ui@0.1.0 -> ./packages/apps/react-tally-ui
+
+electron-tally/ $
+
+# electron-tally/package.json
+  "scripts": {
+:
+    "build-installer:m": "electron-builder -m",
+    "build": "npm run build-installer:m"
+  },
+
+  "build": {
+    "appId": "com.glassball.tallymate",
+    "productName": "TallyMate",
+    "copyright": "Neeraj Gupta",
+    "files": [
+      "src/**/*"
+      "node_modules/**/*",
+      "!node_modules/react-tally-ui/src",
+    ],
+    "mac": {
+      "identity": null,
+      "target": [
+        {
+          "target": "default",
+          "arch": [
+            "universal"
+          ]
+        }
+      ]
+    }
+  }
+
+
+$ npm run build
+
+$ mkdir ~/tmp
+$ cd ~/tmp
+$ npx asar extract /Users/neeraj/Projects/Glassball/Production/excel-tally-production/packages/apps/electron-tally/dist/mac-universal/TallyMate.app/Contents/Resources/app.asar .

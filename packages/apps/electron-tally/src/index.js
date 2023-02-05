@@ -35,7 +35,7 @@ const createWindow = () => {
         });
   } else {
     const uiPackage = `react-ui`;
-    const packagePath = require.resolve('react-ui/build/index.html')
+    const packagePath = require.resolve('react-tally-ui/build/index.html')
     console.log('packagePath:', packagePath);
     mainWindow.loadURL(`file://${packagePath}`);
   }
