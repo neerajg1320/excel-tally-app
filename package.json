@@ -13,7 +13,12 @@
       "packages/apps/*"
     ],
     "nohoist": [
-      "packages/apps/electron-tally"
+      "electron",
+      "electron/**",
+      "electron-squirrel-startup",
+      "electron-squirrel-startup/**",
+      "@electron-forge",
+      "@electron-forge/**"
     ]
   },
   "devDependencies": {

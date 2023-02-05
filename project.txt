@@ -191,3 +191,28 @@ lerna add react-ui --scope=electron-tally
 # The require.resolve is not working seamlessly.
 
 We will try and use it from the package
+
+## Packages with electron-builder
+# Now we will use the electron-builder for building the packages
+
+$ cd packages/apps/electron-tally
+npm install --save-dev electron-builder
+
+lerna run build-installer:m --scope=electron-tally
+
+# Note the npm one is not working: npm run build-installer:m
+To use the electron-builder, electron-forge etc we have to use in the <project> package.json
+  "workspaces": {
+    "packages": [
+      "packages/apps/*"
+    ],
+    "nohoist": [
+      "electron",
+      "electron/**",
+      "electron-squirrel-startup",
+      "electron-squirrel-startup/**",
+      "@electron-forge",
+      "@electron-forge/**"
+    ]
+  },
+
