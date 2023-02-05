@@ -265,3 +265,7 @@ $ npm run build
 $ mkdir ~/tmp
 $ cd ~/tmp
 $ npx asar extract /Users/neeraj/Projects/Glassball/Production/excel-tally-production/packages/apps/electron-tally/dist/mac-universal/TallyMate.app/Contents/Resources/app.asar .
+
+Commands to make package .dmg
+lerna run build --scope=react-tally-ui
+lerna run build --scope=electron-tally

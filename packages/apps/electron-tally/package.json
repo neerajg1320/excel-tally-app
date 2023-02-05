@@ -37,6 +37,11 @@
     "appId": "com.glassball.tallymate",
     "productName": "TallyMate",
     "copyright": "Neeraj Gupta",
+    "files": [
+      "src/**/*",
+      "node_modules/**/*",
+      "!node_modules/react-tally-ui/src"
+    ],
     "mac": {
       "identity": null,
       "target": [
