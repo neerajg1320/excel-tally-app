@@ -276,3 +276,9 @@ Added script to build both apps
 
 # We have the package built successfully !
 
+# After using loadFile our production mode is working correctly
+
+## React App Tally
+#
+# Now we will start writing the code for Tally App
+$ lerna add @glassball/table --scope=react-tally-app
