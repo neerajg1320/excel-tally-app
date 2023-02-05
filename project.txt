@@ -129,4 +129,65 @@ git push -u origin master
 # We can start the app using
 npm start
 
+## Use react build from electron application
+Target:
+i) create production build for react
+ii) access the production target from electron-app
 
+# react production build
+$ cd packages/apps/react-ui
+
+$ npm run build
+$ npm install --save-dev http-server
+
+# We will create a deployment target which uses production js
+"deploy": "http-server -c 1 ./build"
+
+# We have set the caching for one second
+react-ui/ $ npm run deploy
+
+> react-ui@0.1.0 deploy
+> http-server -c 1 ./build
+
+Starting up http-server, serving ./build
+
+http-server version: 14.1.1
+
+http-server settings:
+CORS: disabled
+Cache: 1 seconds
+Connection Timeout: 120 seconds
+Directory Listings: visible
+AutoIndex: visible
+Serve GZIP Files: false
+Serve Brotli Files: false
+Default File Extension: none
+
+Available on:
+  http://127.0.0.1:8080
+  http://192.168.1.100:8080
+Hit CTRL-C to stop the server
+
+# The build is working fine when accessed using http-server. Now we have to test it in the electron app.
+# We will hardcode isDev to false and then check
+
+  if (isDev && false) {
+    :
+  } else {
+    const uiPackage = `react-ui`;
+    const packagePath = path.join(__dirname, `../node_modules/${uiPackage}/build/index.html`);
+    console.log('packagePath:', packagePath);
+    mainWindow.loadURL(`file://${packagePath}`);
+  }
+
+# We get the error:
+(node:32496) electron: Failed to load URL: file:///Users/neeraj/Projects/Glassball/Production/excel-tally-production/packages/apps/electron-tally/node_modules/react-ui/build/index.html with error: ERR_FILE_NOT_FOUND
+# This will not work as the package is hoisted, we will have to use require.resolve
+require.resolve('react-ui/build/index.html')
+
+# We also have to do
+lerna add react-ui --scope=electron-tally
+# Now we will verify results of require.resolve()
+# The require.resolve is not working seamlessly.
+
+We will try and use it from the package

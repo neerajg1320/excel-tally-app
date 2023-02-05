@@ -34,7 +34,10 @@ const createWindow = () => {
           throw error;
         });
   } else {
-    mainWindow.loadFile(path.join(__dirname, 'index.html'));
+    const uiPackage = `react-ui`;
+    const packagePath = require.resolve('react-ui/build/index.html')
+    console.log('packagePath:', packagePath);
+    mainWindow.loadURL(`file://${packagePath}`);
   }
 
   // Open the DevTools.
