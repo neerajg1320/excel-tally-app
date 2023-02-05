@@ -19,7 +19,7 @@ const createWindow = () => {
 
   // and load the index.html of the app.
   // In dev mode open react-app else open index.html
-  if (isDev) {
+  if (isDev && false) {
     const clientPort = 3000;
     mainWindow.loadURL(`http://localhost:${clientPort}`)
         .then(response => {
@@ -37,7 +37,8 @@ const createWindow = () => {
     const uiPackage = `react-ui`;
     const packagePath = require.resolve('react-tally-ui/build/index.html')
     console.log('packagePath:', packagePath);
-    mainWindow.loadURL(`file://${packagePath}`);
+    // mainWindow.loadURL(`file://${packagePath}`);
+    mainWindow.loadFile(packagePath);
   }
 
   // Open the DevTools.
