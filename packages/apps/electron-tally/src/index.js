@@ -1,5 +1,6 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
+const isDev = require('electron-is-dev');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -17,10 +18,27 @@ const createWindow = () => {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  // In dev mode open react-app else open index.html
+  if (isDev) {
+    const clientPort = 3000;
+    mainWindow.loadURL(`http://localhost:${clientPort}`)
+        .then(response => {
+
+        })
+        .catch(error => {
+          if (error.code === 'ERR_CONNECTION_REFUSED') {
+            mainWindow.loadFile(path.join(__dirname, 'error.html'));
+            return;
+          }
+
+          throw error;
+        });
+  } else {
+    mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  }
 
   // Open the DevTools.
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished
