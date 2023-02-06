@@ -1,11 +1,14 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
+const {tallyCommandMap} = require('@glassball/tally');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
+
+let mainWindow = null;
 
 const createWindow = () => {
   // Create the browser window.
@@ -40,6 +43,8 @@ const createWindow = () => {
     mainWindow.loadFile(packagePath);
   }
 
+  console.log("tallyCommandMap:", tallyCommandMap);
+
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
 };
@@ -56,6 +61,7 @@ app.on('window-all-closed', () => {
   if (process.platform !== 'darwin') {
     app.quit();
   }
+  mainWindow = null;
 });
 
 app.on('activate', () => {

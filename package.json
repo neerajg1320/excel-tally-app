@@ -2,12 +2,12 @@
   "name": "root",
   "private": true,
   "scripts": {
-    "react-tally-ui:no-browser": "cross-env BROWSER=none npm run react-tally-ui",
-    "react-tally-ui": "lerna run start --scope=react-tally-ui",
-    "electron-app:after:react-tally-ui": "wait-on tcp:3000 && npm run electron-app",
+    "tallymate-ui:no-browser": "cross-env BROWSER=none npm run tallymate-ui",
+    "tallymate-ui": "lerna run start --scope=@glassball/tallymate-ui",
+    "electron-app:after:tallymate-ui": "wait-on tcp:3000 && npm run electron-app",
     "electron-app": "lerna run start --scope=electron-tally",
-    "start": "concurrently -k \"npm run react-tally-ui:no-browser\" \"npm run electron-app:after:react-tally-ui\" ",
-    "build": "lerna run build --scope=react-tally-ui && lerna run build --scope=electron-tally"
+    "start": "concurrently -k \"npm run tallymate-ui:no-browser\" \"npm run electron-app:after:tallymate-ui\" ",
+    "build": "lerna run build --scope=@glassball/tallymate-ui && lerna run build --scope=electron-tally"
   },
   "workspaces": {
     "packages": [

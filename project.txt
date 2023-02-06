@@ -339,3 +339,12 @@ npm run build
 It seems the node_modules folder should be present.
 Even an empty node_modules folder works!
 So we will keep that in mind for future.
+
+# We have confirmed this. It is the cause. We will see if there is a proper resolution for this in future.
+# Tried removing the yarn.lock. It didn't help we have concluded that node_modules is the issue. This is probably problem with electron-forge.
+
+## Include tally support in electron app via a library. This means we have to first extract the library and then include it in electron app
+
+# We have created library @glassball/tally. Now we will add it in our electron-tally application
+lerna add @glassball/tally --scope=@glassball/tallymate
+
