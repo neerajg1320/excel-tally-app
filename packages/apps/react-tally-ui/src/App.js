@@ -1,8 +1,6 @@
 import logo from './logo.svg';
 // import './App.css';
 import TaggableTable from "./components/taggableTable";
-import {excelToJson} from "@glassball/excel";
-import ReadExcel from "./components/fileReader/readExcel";
 import FileReader from "./components/fileReader/FileReader";
 
 function App() {
