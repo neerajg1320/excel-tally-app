@@ -297,4 +297,10 @@ npm install
 
 # disabling the modules has fixed the problem !
 
+## We have added the @glassball/excel library.
+# Now we will add it in the project.
+lerna add @glassball/excel --scope=react-tally-ui
+
+# Verify using the following command:
+npm list @glassball/excel
 
