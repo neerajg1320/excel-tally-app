@@ -304,3 +304,6 @@ lerna add @glassball/excel --scope=react-tally-ui
 # Verify using the following command:
 npm list @glassball/excel
 
+# We have add the ReadExcel component in the library. Now we will test it
+lerna add @glassball/read-excel --scope=react-tally-ui
+lerna bootstrap

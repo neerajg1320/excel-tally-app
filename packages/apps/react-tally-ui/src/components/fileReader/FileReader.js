@@ -1,5 +1,6 @@
-import ReadExcel from "./readExcel";
+// import ReadExcel from "./readExcel";
 import {useState} from "react";
+import {ReadExcel} from "@glassball/read-excel";
 
 const FileReader = () => {
   const [data, setData] = useState([]);
@@ -14,7 +15,6 @@ const FileReader = () => {
       <ReadExcel onComplete={handleComplete} />
       <pre>
         {data && JSON.stringify(data, null, 2)}
-
       </pre>
     </>
   );

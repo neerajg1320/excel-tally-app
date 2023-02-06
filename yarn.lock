@@ -1584,6 +1584,14 @@
   "resolved" "https://registry.npmjs.org/@glassball/excel/-/excel-0.0.6.tgz"
   "version" "0.0.6"
 
+"@glassball/read-excel@^0.0.27":
+  "integrity" "sha512-gNgrdq4aWZXvvSlRl+2rx9W89KC6D5Vru1ail4xB0jJJqxpr2ZWOWkoRwHsmfX5JbtCQ85UFkeqU6dh1HIfrXQ=="
+  "resolved" "https://registry.npmjs.org/@glassball/read-excel/-/read-excel-0.0.27.tgz"
+  "version" "0.0.27"
+  dependencies:
+    "@glassball/excel" "^0.0.6"
+    "react" "^18.2.0"
+
 "@glassball/table@^0.1.5":
   "integrity" "sha512-W1z/+vpPu0eQxSAX6eC16MP4MNnzqur7C9xd536ipOpKM9Odhj3cAX0fxK7fgV5sKZvPCZs9qubxLKlGJl5qlg=="
   "resolved" "https://registry.npmjs.org/@glassball/table/-/table-0.1.5.tgz"
@@ -12016,7 +12024,7 @@
     "regenerator-runtime" "^0.13.9"
     "whatwg-fetch" "^3.6.2"
 
-"react-bootstrap@^2.7.0":
+"react-bootstrap@^2.7.0", "react-bootstrap@2.7.x":
   "integrity" "sha512-Jcrn6aUuRVBeSB6dzKODKZU1TONOdhAxu0IDm4Sv74SJUm98dMdhSotF2SNvFEADANoR+stV+7TK6SNX1wWu5w=="
   "resolved" "https://registry.npmjs.org/react-bootstrap/-/react-bootstrap-2.7.0.tgz"
   "version" "2.7.0"
@@ -12196,7 +12204,8 @@
   "resolved" "file:packages/apps/react-tally-ui"
   "version" "0.0.1"
   dependencies:
-    "@glassball/excel" "^0.0.5"
+    "@glassball/excel" "^0.0.6"
+    "@glassball/read-excel" "^0.0.26"
     "@glassball/table" "^0.1.5"
     "@testing-library/jest-dom" "^5.16.5"
     "@testing-library/react" "^13.4.0"
