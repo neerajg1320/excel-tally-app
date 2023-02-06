@@ -1,7 +1,7 @@
 const { app, BrowserWindow } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
-// const {tallyCommandMap} = require('@glassball/tally');
+const {convertObjToXml} = require('@glassball/xml');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -43,7 +43,11 @@ const createWindow = () => {
     mainWindow.loadFile(packagePath);
   }
 
-  // console.log("tallyCommandMap:", tallyCommandMap);
+  const sampleObj = {
+    "name": "Alice",
+    "age": 30
+  }
+  console.log('Sample Object:', convertObjToXml(sampleObj));
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();

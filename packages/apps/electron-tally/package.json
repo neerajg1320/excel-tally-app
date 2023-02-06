@@ -12,7 +12,9 @@
     "publish": "electron-forge publish",
     "lint": "echo \"No linting configured\"",
     "build-installer:m": "electron-builder -m",
-    "build": "npm run build-installer:m"
+    "build": "npm run build-installer:m",
+    "clean": "rm -rf dist",
+    "purge": "rm -rf node_modules"
   },
   "keywords": [],
   "author": {
@@ -23,6 +25,7 @@
   "dependencies": {
     "@glassball/tally": "^0.0.5",
     "@glassball/tallymate-ui": "^0.0.1",
+    "@glassball/xml": "^0.0.5",
     "electron-is-dev": "^2.0.0",
     "electron-squirrel-startup": "^1.0.0"
   },
