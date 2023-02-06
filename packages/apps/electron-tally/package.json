@@ -1,8 +1,9 @@
 {
-  "name": "electron-tally",
+  "name": "@glassball/tallymate",
   "productName": "electron-tally",
   "version": "0.0.1",
   "description": "My Electron application description",
+  "private": true,
   "main": "src/index.js",
   "scripts": {
     "start": "electron-forge start",
@@ -20,9 +21,9 @@
   },
   "license": "MIT",
   "dependencies": {
+    "@glassball/tallymate-ui": "^0.0.1",
     "electron-is-dev": "^2.0.0",
-    "electron-squirrel-startup": "^1.0.0",
-    "react-tally-ui": "^0.0.1"
+    "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.4",

@@ -1597,6 +1597,29 @@
   "resolved" "https://registry.npmjs.org/@glassball/table/-/table-0.1.5.tgz"
   "version" "0.1.5"
 
+"@glassball/tallymate-ui@^0.0.1", "@glassball/tallymate-ui@file:/Users/neeraj/Projects/Glassball/Production/excel-tally-production/packages/apps/react-tally-ui":
+  "resolved" "file:packages/apps/react-tally-ui"
+  "version" "0.0.1"
+  dependencies:
+    "@glassball/excel" "^0.0.6"
+    "@glassball/read-excel" "^0.0.27"
+    "@glassball/table" "^0.1.5"
+    "@testing-library/jest-dom" "^5.16.5"
+    "@testing-library/react" "^13.4.0"
+    "@testing-library/user-event" "^13.5.0"
+    "react" "^18.2.0"
+    "react-dom" "^18.2.0"
+    "react-scripts" "5.0.1"
+    "web-vitals" "^2.1.4"
+
+"@glassball/tallymate@file:/Users/neeraj/Projects/Glassball/Production/excel-tally-production/packages/apps/electron-tally":
+  "resolved" "file:packages/apps/electron-tally"
+  "version" "0.0.1"
+  dependencies:
+    "@glassball/tallymate-ui" "^0.0.1"
+    "electron-is-dev" "^2.0.0"
+    "electron-squirrel-startup" "^1.0.0"
+
 "@hapi/hoek@^9.0.0":
   "integrity" "sha512-/c6rf4UJlmHlC9b5BaNvzAcFv7HZ2QHaV0D4/HNlBdvFnvQq8RI4kYdhyPCl7Xj+oWvTWQ8ujhqS53LIgAe6KQ=="
   "resolved" "https://registry.npmjs.org/@hapi/hoek/-/hoek-9.3.0.tgz"
@@ -2637,7 +2660,14 @@
     "npmlog" "^6.0.2"
     "write-file-atomic" "^4.0.1"
 
-"@malept/cross-spawn-promise@^1.0.0", "@malept/cross-spawn-promise@^1.1.0":
+"@malept/cross-spawn-promise@^1.0.0":
+  "integrity" "sha512-RTBGWL5FWQcg9orDOCcp4LvItNzUPcyEU9bwaeJX0rJ1IQxzucC48Y0/sQLp/g6t99IQgAlGIaesJS+gTn7tVQ=="
+  "resolved" "https://registry.npmjs.org/@malept/cross-spawn-promise/-/cross-spawn-promise-1.1.1.tgz"
+  "version" "1.1.1"
+  dependencies:
+    "cross-spawn" "^7.0.1"
+
+"@malept/cross-spawn-promise@^1.1.0":
   "integrity" "sha512-RTBGWL5FWQcg9orDOCcp4LvItNzUPcyEU9bwaeJX0rJ1IQxzucC48Y0/sQLp/g6t99IQgAlGIaesJS+gTn7tVQ=="
   "resolved" "https://registry.npmjs.org/@malept/cross-spawn-promise/-/cross-spawn-promise-1.1.1.tgz"
   "version" "1.1.1"
@@ -3516,12 +3546,7 @@
   "resolved" "https://registry.npmjs.org/@types/mime/-/mime-3.0.1.tgz"
   "version" "3.0.1"
 
-"@types/minimatch@*":
-  "integrity" "sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA=="
-  "resolved" "https://registry.npmjs.org/@types/minimatch/-/minimatch-5.1.2.tgz"
-  "version" "5.1.2"
-
-"@types/minimatch@^3.0.3":
+"@types/minimatch@*", "@types/minimatch@^3.0.3":
   "integrity" "sha512-Klz949h02Gz2uZCMGwDUSDS1YBlTdDDgbWHi+81l29tQALUtvz4rAYi5uoVhE5Lagoq6DeqAUlbrHvW/mXDgdQ=="
   "resolved" "https://registry.npmjs.org/@types/minimatch/-/minimatch-3.0.5.tgz"
   "version" "3.0.5"
@@ -4790,12 +4815,7 @@
   "resolved" "https://registry.npmjs.org/buffer-crc32/-/buffer-crc32-0.2.13.tgz"
   "version" "0.2.13"
 
-"buffer-equal@^1.0.0":
-  "integrity" "sha512-QoV3ptgEaQpvVwbXdSO39iqPQTCxSF7A5U99AxbHYqUdCizL/lH2Z0A2y6nbZucxMEOtNyZfG2s6gsVugGpKkg=="
-  "resolved" "https://registry.npmjs.org/buffer-equal/-/buffer-equal-1.0.1.tgz"
-  "version" "1.0.1"
-
-"buffer-equal@1.0.0":
+"buffer-equal@^1.0.0", "buffer-equal@1.0.0":
   "integrity" "sha512-tcBWO2Dl4e7Asr9hTGcpVrCe+F7DubpmqWCTbj4FHLmjqO2hIaC383acQubWtRJhdceqs5uBHs6Es+Sk//RKiQ=="
   "resolved" "https://registry.npmjs.org/buffer-equal/-/buffer-equal-1.0.0.tgz"
   "version" "1.0.0"
@@ -5124,12 +5144,7 @@
   dependencies:
     "restore-cursor" "^3.1.0"
 
-"cli-spinners@^2.5.0":
-  "integrity" "sha512-qu3pN8Y3qHNgE2AFweciB1IfMnmZ/fsNTEE+NOFjmGB2F/7rLhnhzppvpCnN4FovtP26k8lHyy9ptEbNwWFLzw=="
-  "resolved" "https://registry.npmjs.org/cli-spinners/-/cli-spinners-2.7.0.tgz"
-  "version" "2.7.0"
-
-"cli-spinners@2.6.1":
+"cli-spinners@^2.5.0", "cli-spinners@2.6.1":
   "integrity" "sha512-x/5fWmGMnbKQAaNwN+UZlV79qBLM9JFnJuJ03gIi5whrob0xV0ofNVHy9DhwGdsMJQc2OKv0oGmLzvaqvAVv+g=="
   "resolved" "https://registry.npmjs.org/cli-spinners/-/cli-spinners-2.6.1.tgz"
   "version" "2.6.1"
@@ -6480,14 +6495,6 @@
   "version" "1.0.0"
   dependencies:
     "debug" "^2.2.0"
-
-"electron-tally@file:/Users/neeraj/Projects/Glassball/Production/excel-tally-production/packages/apps/electron-tally":
-  "resolved" "file:packages/apps/electron-tally"
-  "version" "0.0.1"
-  dependencies:
-    "electron-is-dev" "^2.0.0"
-    "electron-squirrel-startup" "^1.0.0"
-    "react-tally-ui" "^0.0.1"
 
 "electron-to-chromium@^1.4.284":
   "integrity" "sha512-Vp3CVhmYpgf4iXNKAucoQUDcCrBQX3XLBtwgFqP9BUXuucgvAV9zWp1kYU7LL9j4++s9O+12cb3wMtN4SJy6UQ=="
@@ -10213,9 +10220,9 @@
     "yallist" "^4.0.0"
 
 "minipass@^4.0.0":
-  "integrity" "sha512-V9esFpNbK0arbN3fm2sxDKqMYgIp7XtVdE4Esj+PE4Qaaxdg1wIw48ITQIOn1sc8xXSmUviVL3cyjMqPlrVkiA=="
-  "resolved" "https://registry.npmjs.org/minipass/-/minipass-4.0.1.tgz"
-  "version" "4.0.1"
+  "integrity" "sha512-4Hbzei7ZyBp+1aw0874YWpKOubZd/jc53/XU+gkYry1QV+VvrbO8icLM5CUtm4F0hyXn85DXYKEMIS26gitD3A=="
+  "resolved" "https://registry.npmjs.org/minipass/-/minipass-4.0.2.tgz"
+  "version" "4.0.2"
 
 "minizlib@^2.1.1", "minizlib@^2.1.2":
   "integrity" "sha512-bAxsR8BVfj60DWXHE3u30oHzfl4G7khkSuPW+qvpd7jFRHm7dLxOjUk1EHACJ/hxLY8phGJ0YhYHZo7jil7Qdg=="
@@ -12200,21 +12207,6 @@
   "resolved" "https://registry.npmjs.org/react-table/-/react-table-7.8.0.tgz"
   "version" "7.8.0"
 
-"react-tally-ui@^0.0.1", "react-tally-ui@file:/Users/neeraj/Projects/Glassball/Production/excel-tally-production/packages/apps/react-tally-ui":
-  "resolved" "file:packages/apps/react-tally-ui"
-  "version" "0.0.1"
-  dependencies:
-    "@glassball/excel" "^0.0.6"
-    "@glassball/read-excel" "^0.0.26"
-    "@glassball/table" "^0.1.5"
-    "@testing-library/jest-dom" "^5.16.5"
-    "@testing-library/react" "^13.4.0"
-    "@testing-library/user-event" "^13.5.0"
-    "react" "^18.2.0"
-    "react-dom" "^18.2.0"
-    "react-scripts" "5.0.1"
-    "web-vitals" "^2.1.4"
-
 "react-transition-group@^4.3.0", "react-transition-group@^4.4.2":
   "integrity" "sha512-pZcd1MCJoiKiBR2NRxeCRg13uCXbydPnmB4EOeRrY7480qNWO8IIgQG6zlDkm6uRMsURXPuKq0GWtiM59a5Q6g=="
   "resolved" "https://registry.npmjs.org/react-transition-group/-/react-transition-group-4.4.5.tgz"
@@ -13740,7 +13732,14 @@
   dependencies:
     "os-tmpdir" "~1.0.2"
 
-"tmp@^0.2.0", "tmp@~0.2.1":
+"tmp@^0.2.0":
+  "integrity" "sha512-76SUhtfqR2Ijn+xllcI5P1oyannHNHByD80W1q447gU3mp9G9PSpGdWmjUOHRDPiHYacIk66W7ubDTuPF3BEtQ=="
+  "resolved" "https://registry.npmjs.org/tmp/-/tmp-0.2.1.tgz"
+  "version" "0.2.1"
+  dependencies:
+    "rimraf" "^3.0.0"
+
+"tmp@~0.2.1":
   "integrity" "sha512-76SUhtfqR2Ijn+xllcI5P1oyannHNHByD80W1q447gU3mp9G9PSpGdWmjUOHRDPiHYacIk66W7ubDTuPF3BEtQ=="
   "resolved" "https://registry.npmjs.org/tmp/-/tmp-0.2.1.tgz"
   "version" "0.2.1"
@@ -14903,20 +14902,15 @@
   "resolved" "https://registry.npmjs.org/yargs-parser/-/yargs-parser-20.2.9.tgz"
   "version" "20.2.9"
 
-"yargs-parser@^20.2.3":
-  "integrity" "sha512-y11nGElTIV+CT3Zv9t7VKl+Q3hTQoT9a1Qzezhhl6Rp21gJ/IVTW7Z3y9EWXhuUBC2Shnf+DX0antecpAwSP8w=="
-  "resolved" "https://registry.npmjs.org/yargs-parser/-/yargs-parser-20.2.9.tgz"
-  "version" "20.2.9"
+"yargs-parser@^20.2.3", "yargs-parser@20.2.4":
+  "integrity" "sha512-WOkpgNhPTlE73h4VFAFsOnomJVaovO8VqLDzy5saChRBFQFBoMYirowyW+Q9HB4HFF4Z7VZTiG3iSzJJA29yRA=="
+  "resolved" "https://registry.npmjs.org/yargs-parser/-/yargs-parser-20.2.4.tgz"
+  "version" "20.2.4"
 
 "yargs-parser@^21.1.1", "yargs-parser@21.1.1":
   "integrity" "sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw=="
   "resolved" "https://registry.npmjs.org/yargs-parser/-/yargs-parser-21.1.1.tgz"
   "version" "21.1.1"
-
-"yargs-parser@20.2.4":
-  "integrity" "sha512-WOkpgNhPTlE73h4VFAFsOnomJVaovO8VqLDzy5saChRBFQFBoMYirowyW+Q9HB4HFF4Z7VZTiG3iSzJJA29yRA=="
-  "resolved" "https://registry.npmjs.org/yargs-parser/-/yargs-parser-20.2.4.tgz"
-  "version" "20.2.4"
 
 "yargs@^15.0.1":
   "integrity" "sha512-aePbxDmcYW++PaqBsJ+HYUFwCdv4LVvdnhBy78E57PIor8/OVvhMrADFFEDh8DHDFRv/O9i3lPhsENjO7QX0+A=="

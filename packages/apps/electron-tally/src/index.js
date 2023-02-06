@@ -34,8 +34,8 @@ const createWindow = () => {
           throw error;
         });
   } else {
-    const uiPackage = `react-ui`;
-    const packagePath = require.resolve('react-tally-ui/build/index.html')
+    const uiPackage = `@glassball/tallymate-ui`;
+    const packagePath = require.resolve(`${uiPackage}/build/index.html`)
     console.log('packagePath:', packagePath);
     mainWindow.loadFile(packagePath);
   }

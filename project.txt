@@ -307,3 +307,35 @@ npm list @glassball/excel
 # We have add the ReadExcel component in the library. Now we will test it
 lerna add @glassball/read-excel --scope=react-tally-ui
 lerna bootstrap
+
+# We ran into the electron builder issue again
+Temporary Resolution: Install electron-builder globally with  -g
+npm install electron-builder -g
+
+# TBD:
+We will come back later and resolve the electron-builder issue.
+
+# We are still blocked on the problem
+We will come back later!
+
+# So right now we will proceed with component integration
+
+## Add the react-bootstrap Tabs
+
+[# electron-builder problem]
+We are getting electron-builder not found when we are doing 'npm run build'
+# https://stackoverflow.com/questions/67833794/npm-err-could-not-determine-executable-to-run
+rm -rf .git/hooks
+! Did not work
+
+cd packages/apps/electron-tally
+# also created a local folder node_modules which was empty
+npm install electron-builder
+npm run build
+
+# It worked, but we have to monitor if this is a reliable solution.
+
+# Next time also the same thing:
+It seems the node_modules folder should be present.
+Even an empty node_modules folder works!
+So we will keep that in mind for future.
