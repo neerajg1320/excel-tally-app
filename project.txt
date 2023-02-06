@@ -282,3 +282,19 @@ Added script to build both apps
 #
 # Now we will start writing the code for Tally App
 $ lerna add @glassball/table --scope=react-tally-app
+
+# The app is working. We are seeing one problem
+Problem: The CSS resizers are not there.
+Unexpected: There is no CSS file generated.
+
+# We need to look into it.
+Upon looking at the element using 'Inspect element' from the browser we can see that the resizer css is not being applied.
+Our first point of investigation is rollup as it is not producing css files.
+
+# Update the library in the application
+Modify to the new version in package.json
+npm install
+
+# disabling the modules has fixed the problem !
+
+
