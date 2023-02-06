@@ -5,9 +5,9 @@
     "tallymate-ui:no-browser": "cross-env BROWSER=none npm run tallymate-ui",
     "tallymate-ui": "lerna run start --scope=@glassball/tallymate-ui",
     "electron-app:after:tallymate-ui": "wait-on tcp:3000 && npm run electron-app",
-    "electron-app": "lerna run start --scope=electron-tally",
+    "electron-app": "lerna run start --scope=@glassball/tallymate",
     "start": "concurrently -k \"npm run tallymate-ui:no-browser\" \"npm run electron-app:after:tallymate-ui\" ",
-    "build": "lerna run build --scope=@glassball/tallymate-ui && lerna run build --scope=electron-tally"
+    "build": "lerna run build --scope=@glassball/tallymate-ui && lerna run build --scope=@glassball/tallymate"
   },
   "workspaces": {
     "packages": [
