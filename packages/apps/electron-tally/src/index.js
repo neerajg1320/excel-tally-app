@@ -3,7 +3,7 @@ const path = require('path');
 const isDev = require('electron-is-dev');
 const {convertObjToXml} = require('@glassball/xml');
 const {getTallyCommandMap, getCurrentCompany, tallyApiInit} = require('@glassball/tally');
-const {testXml, testTally} = require('./test');
+const {testXml, testTally} = require('./tests');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
