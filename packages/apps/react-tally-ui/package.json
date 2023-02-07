@@ -25,7 +25,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "deploy": "http-server -c 1 ./build"
+    "deploy": "http-server -c 1 ./build",
+    "clean": "rm -rf build",
+    "purge": "rm -rf node_modules"
   },
   "eslintConfig": {
     "extends": [

@@ -25,17 +25,17 @@ const createWindow = () => {
   // In dev mode open react-app else open index.html
   if (isDev) {
     const clientPort = 3000;
-    mainWindow.loadURL(`http://localhost:${clientPort}`)
+    const url = `http://localhost:${clientPort}`;
+    mainWindow.loadURL(url)
         .then(response => {
-
+          console.log(`URL ${url} loaded successfully`);
         })
         .catch(error => {
           if (error.code === 'ERR_CONNECTION_REFUSED') {
             mainWindow.loadFile(path.join(__dirname, 'error.html'));
             return;
           }
-
-          throw error;
+          // throw error;
         });
   } else {
     const uiPackage = `@glassball/tallymate-ui`;
@@ -44,12 +44,23 @@ const createWindow = () => {
     mainWindow.loadFile(packagePath);
   }
 
+  verifyTally();
+  verifyXml();
+
+  // Open the DevTools.
+  // mainWindow.webContents.openDevTools();
+};
+
+function verifyXml() {
   const sampleObj = {
     "name": "Alice",
     "age": 30
   }
   console.log('Sample Object:', convertObjToXml(sampleObj));
   console.log(`convertObjToXml=${convertObjToXml}`);
+}
+
+function verifyTally() {
   console.log('Tally Command Map:', getTallyCommandMap());
 
   const tallyServer = {host: '192.168.64.3', port: 9000};
@@ -61,10 +72,7 @@ const createWindow = () => {
       .catch(err => {
         console.error(`Error! ${JSON.stringify(err, null, 2)}`);
       });
-
-  // Open the DevTools.
-  // mainWindow.webContents.openDevTools();
-};
+}
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
