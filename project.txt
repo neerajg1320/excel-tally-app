@@ -350,3 +350,7 @@ lerna add @glassball/tally --scope=@glassball/tallymate
 lerna add axios --scope=@glassball/tallymate
 lerna add date-fns  --scope=@glassball/tallymate
 
+
+## Add the communication with the Client
+#
+We will add the communication with react client.

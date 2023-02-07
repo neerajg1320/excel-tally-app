@@ -1,8 +1,9 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const isDev = require('electron-is-dev');
 const {convertObjToXml} = require('@glassball/xml');
 const {getTallyCommandMap, getCurrentCompany, tallyApiInit} = require('@glassball/tally');
+const {testXml, testTally} = require('./test');
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) {
@@ -44,35 +45,13 @@ const createWindow = () => {
     mainWindow.loadFile(packagePath);
   }
 
-  verifyTally();
-  verifyXml();
+  testXml();
+  testTally();
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
 };
 
-function verifyXml() {
-  const sampleObj = {
-    "name": "Alice",
-    "age": 30
-  }
-  console.log('Sample Object:', convertObjToXml(sampleObj));
-  console.log(`convertObjToXml=${convertObjToXml}`);
-}
-
-function verifyTally() {
-  console.log('Tally Command Map:', getTallyCommandMap());
-
-  const tallyServer = {host: '192.168.64.3', port: 9000};
-  tallyApiInit(tallyServer);
-  getCurrentCompany({})
-      .then(resp => {
-        console.log('Tally Current Company:', resp.response.value);
-      })
-      .catch(err => {
-        console.error(`Error! ${JSON.stringify(err, null, 2)}`);
-      });
-}
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
