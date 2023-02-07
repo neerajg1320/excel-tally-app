@@ -347,4 +347,6 @@ So we will keep that in mind for future.
 
 # We have created library @glassball/tally. Now we will add it in our electron-tally application
 lerna add @glassball/tally --scope=@glassball/tallymate
+lerna add axios --scope=@glassball/tallymate
+lerna add date-fns  --scope=@glassball/tallymate
 
