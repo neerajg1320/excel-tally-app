@@ -376,3 +376,11 @@ const createWindow = () => {
 }
 
 # The above has fixed our problem.
+
+## Once the remoteCall is supported. Now we can support the TallyComponent.
+
+# Tipping Point:
+We will defer making component out of our Tally Component instead for now we will keep it hard wired with our app.
+So our app architecture is slightly modified
+This itself is an activity that has been underestimated.
+We have too many modules for which we want to make libraries.
