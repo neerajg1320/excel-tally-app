@@ -31,8 +31,5 @@
     "cross-env": "^7.0.3",
     "lerna": "^6.4.1",
     "wait-on": "^7.0.1"
-  },
-  "dependencies": {
-    "@glassball/tally": "^0.0.16"
   }
 }
