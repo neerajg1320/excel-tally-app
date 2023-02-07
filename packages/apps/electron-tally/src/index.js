@@ -62,8 +62,6 @@ const createWindow = () => {
         console.error(`Error! ${JSON.stringify(err, null, 2)}`);
       });
 
-  // console.log('Tally Command Map:', JSON.stringify(getTallyCommandMap(), null, 2));
-
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
 };
