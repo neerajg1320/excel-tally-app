@@ -387,3 +387,9 @@ We have too many modules for which we want to make libraries.
 
 # We fixed the problem with the universal target by setting mergeASARs to false
 # https://github.com/electron-userland/electron-builder/issues/6735
+
+## date-fns size issue. The date-fns is the biggest library to be included and its 19
+# We have to think about reducing its size.
+
+# We will try and use esbuild to reduce the size of the electron code.
+
