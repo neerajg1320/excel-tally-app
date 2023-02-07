@@ -46,11 +46,11 @@
     "copyright": "Neeraj Gupta",
     "files": [
       "src/**/*",
-      "node_modules/**/*",
-      "!node_modules/react-tally-ui/src"
+      "node_modules/**/*"
     ],
     "mac": {
       "identity": null,
+      "mergeASARs": false,
       "target": [
         {
           "target": "default",
