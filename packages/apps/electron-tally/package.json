@@ -23,8 +23,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@glassball/tally": "^0.0.18",
     "@glassball/tallymate-ui": "^0.0.1",
+    "@glassball/tally": "^0.0.18",
     "@glassball/xml": "^0.0.5",
     "axios": "^1.3.2",
     "date-fns": "^2.29.3",
