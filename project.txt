@@ -354,3 +354,25 @@ lerna add date-fns  --scope=@glassball/tallymate
 ## Add the communication with the Client
 #
 We will add the communication with react client.
+
+# We have successfully published the electron-client-remote library.
+lerna add @glassball/electron-client-remote --scope=@glassball/tallymate-ui
+
+# We also need to make changes to electron-tally (@glassball/tallymate) application
+# We need to add the nodeIntegration and contextIsolation in the webPreferences.
+const createWindow = () => {
+  // Create the browser window.
+  const mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      // preload: path.join(__dirname, 'preload.js'),
+      nodeIntegration: true,
+      // enableRemoteModule: true,
+      contextIsolation: false
+    }
+  });
+  :
+}
+
+# The above has fixed our problem.
