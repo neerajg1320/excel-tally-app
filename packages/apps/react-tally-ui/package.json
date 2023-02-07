@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "./",
   "dependencies": {
-    "@glassball/electron-client-remote": "^0.0.7",
+    "@glassball/electron-client-remote": "^0.0.12",
     "@glassball/excel": "^0.0.6",
     "@glassball/read-excel": "^0.0.27",
     "@glassball/table": "^0.1.5",
