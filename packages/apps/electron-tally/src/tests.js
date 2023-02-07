@@ -1,3 +1,4 @@
+const {convertObjToXml} = require('@glassball/xml');
 const {getTallyCommandMap, tallyApiInit, getCurrentCompany} = require("@glassball/tally");
 
 function testXml() {
