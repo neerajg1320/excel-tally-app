@@ -1,0 +1,29 @@
+# Project Stage 2:
+Here we are going to add two repos into our packages folder.
+We are going to use monorepo pattern but there are going to be multiple repos
+
+We are going to add
+i) electron-excel-tally
+ii) excel-table-min
+
+## Add the react-excel-tally repo
+cd packages/apps
+git clone ssh://git@github.com/neeraj76/react-excel-tally
+cd react-excel-tally
+rm *.lock
+npm install
+
+# We can see that node_modules is not created
+npm start
+
+The react repo is working !
+
+cd ../../
+git submodule add ssh://git@github.com/neeraj76/react-excel-tally
+
+
+## Add the electron-excel-tally repo
+# This time we will try a different approach which takes less commands to add submodule
+git submodule add ssh://git@github.com/neeraj76/electron-excel-tally packages/apps/electron-excel-tally
+cd packages/apps/electron-excel-tally
+
