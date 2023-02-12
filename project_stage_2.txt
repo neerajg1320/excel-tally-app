@@ -27,3 +27,5 @@ git submodule add ssh://git@github.com/neeraj76/react-excel-tally
 git submodule add ssh://git@github.com/neeraj76/electron-excel-tally packages/apps/electron-excel-tally
 cd packages/apps/electron-excel-tally
 
+lerna add @glassball/tally --scope=electron-excel-tally
+
