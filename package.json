@@ -2,10 +2,16 @@
   "name": "root",
   "private": true,
   "scripts": {
+    "react-tally-ui:no-browser": "cross-env BROWSER=none npm run react-tally-ui",
+    "react-tally-ui": "lerna run start --scope=@glassball/react-tally-ui",
+    "electron-tally:after:react-tally-ui": "wait-on tcp:3000 && npm run electron-tally",
+    "electron-tally": "lerna run start --scope=@glassball/electron-tally",
+
     "tallymate-ui:no-browser": "cross-env BROWSER=none npm run tallymate-ui",
     "tallymate-ui": "lerna run start --scope=@glassball/tallymate-ui",
     "tallymate:after:tallymate-ui": "wait-on tcp:3000 && npm run tallymate",
     "tallymate": "lerna run start --scope=@glassball/tallymate",
+    
     "start": "concurrently -k \"npm run tallymate-ui:no-browser\" \"npm run tallymate:after:tallymate-ui\" ",
     "build": "lerna run build --scope=@glassball/tallymate-ui && lerna run build --scope=@glassball/tallymate"
   },
