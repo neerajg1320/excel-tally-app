@@ -20,6 +20,8 @@
       "packages/apps/*"
     ],
     "nohoist": [
+      "electron",
+      "electron/**",
       "electron-squirrel-startup",
       "electron-squirrel-startup/**",
       "@electron-forge",
