@@ -1,5 +1,5 @@
 {
-  "name": "@glassball/tallymate",
+  "name": "@glassball/electron-tally",
   "productName": "electron-tally",
   "version": "0.0.1",
   "description": "My Electron application description",
