@@ -7,3 +7,6 @@
 [submodule "react-excel-min"]
 	path = react-excel-min
 	url = ssh://git@github.com/neeraj76/react-excel-min
+[submodule "packages/apps/react-excel-min"]
+	path = packages/apps/react-excel-min
+	url = ssh://git@github.com/neeraj76/react-excel-min
