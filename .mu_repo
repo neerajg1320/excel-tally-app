@@ -1,6 +1,4 @@
 repo=.
 repo=packages/apps/electron-excel-tally
-repo=packages/apps/electron-tally
 repo=packages/apps/react-excel-min
-repo=packages/apps/react-tally-ui
 serial=True
