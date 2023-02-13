@@ -37,28 +37,7 @@
     "@electron-forge/maker-rpm": "^6.0.4",
     "@electron-forge/maker-squirrel": "^6.0.4",
     "@electron-forge/maker-zip": "^6.0.4",
-    "electron": "22.2.0",
+    "electron": "^23.0.0",
     "electron-builder": "^23.6.0"
-  },
-  "build": {
-    "appId": "com.glassball.tallymate",
-    "productName": "TallyMate",
-    "copyright": "Neeraj Gupta",
-    "files": [
-      "src/**/*",
-      "node_modules/**/*"
-    ],
-    "mac": {
-      "identity": null,
-      "mergeASARs": false,
-      "target": [
-        {
-          "target": "default",
-          "arch": [
-            "universal"
-          ]
-        }
-      ]
-    }
   }
 }

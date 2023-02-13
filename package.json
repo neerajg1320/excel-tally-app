@@ -20,16 +20,7 @@
       "packages/apps/*"
     ],
     "nohoist": [
-      "electron",
-      "electron/**",
-      "electron-squirrel-startup",
-      "electron-squirrel-startup/**",
-      "@electron-forge",
-      "@electron-forge/**",
-      "electron-builder",
-      "electron-builder/**",
-      "app-builder-bin",
-      "app-builder-bin/**"
+      "packages/apps/react-excel-min"
     ]
   },
   "devDependencies": {

@@ -4,3 +4,6 @@
 [submodule "packages/apps/electron-excel-tally"]
 	path = packages/apps/electron-excel-tally
 	url = ssh://git@github.com/neeraj76/electron-excel-tally
+[submodule "react-excel-min"]
+	path = react-excel-min
+	url = ssh://git@github.com/neeraj76/react-excel-min

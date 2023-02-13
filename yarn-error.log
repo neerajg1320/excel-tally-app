@@ -1,0 +1,55 @@
+Arguments: 
+  /Users/neeraj/.nvm/versions/node/v16.17.1/bin/node /opt/homebrew/bin/yarn install --mutex network:42424 --non-interactive
+
+PATH: 
+  /usr/local/opt/google-cloud-sdk/bin:/Users/neeraj/.nvm/versions/node/v16.17.1/bin:/Users/neeraj/.pyenv/shims:/Users/neeraj/.pyenv/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Applications/VMware Fusion Tech Preview.app/Contents/Public:/usr/local/share/dotnet:~/.dotnet/tools:/Library/Apple/usr/bin
+
+Yarn version: 
+  1.22.17
+
+Node version: 
+  16.17.1
+
+Platform: 
+  darwin arm64
+
+Trace: 
+  Error: ENOENT: no such file or directory, lstat '/Users/neeraj/Projects/Glassball/Production/project-excel-tally/excel-tally-app-with-electron-problems/packages/apps/react-excel-tally/node_modules'
+
+npm manifest: 
+  {
+    "name": "root",
+    "private": true,
+    "scripts": {
+      "react-tally-ui:no-browser": "cross-env BROWSER=none npm run react-tally-ui",
+      "react-tally-ui": "lerna run start --scope=@glassball/react-tally-ui",
+      "electron-tally:after:react-tally-ui": "wait-on tcp:3000 && npm run electron-tally",
+      "electron-tally": "lerna run start --scope=@glassball/electron-tally",
+  
+      "tallymate-ui:no-browser": "cross-env BROWSER=none npm run tallymate-ui",
+      "tallymate-ui": "lerna run start --scope=@glassball/tallymate-ui",
+      "tallymate:after:tallymate-ui": "wait-on tcp:3000 && npm run tallymate",
+      "tallymate": "lerna run start --scope=@glassball/tallymate",
+      
+      "start": "concurrently -k \"npm run tallymate-ui:no-browser\" \"npm run tallymate:after:tallymate-ui\" ",
+      "build": "lerna run build --scope=@glassball/tallymate-ui && lerna run build --scope=@glassball/tallymate"
+    },
+    "workspaces": {
+      "packages": [
+        "packages/apps/*"
+      ]
+    },
+    "devDependencies": {
+      "concurrently": "^7.6.0",
+      "cross-env": "^7.0.3",
+      "electron": "^23.0.0",
+      "lerna": "^6.4.1",
+      "wait-on": "^7.0.1"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
