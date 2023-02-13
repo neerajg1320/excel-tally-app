@@ -13,7 +13,10 @@
     "tallymate": "lerna run start --scope=@glassball/tallymate",
     
     "start": "concurrently -k \"npm run tallymate-ui:no-browser\" \"npm run tallymate:after:tallymate-ui\" ",
-    "build": "lerna run build --scope=@glassball/tallymate-ui && lerna run build --scope=@glassball/tallymate"
+    "build": "lerna run build --scope=@glassball/tallymate-ui && lerna run build --scope=@glassball/tallymate",
+
+    "clean": "lerna run clean",
+    "purge": "lerna run purge && rm -rf node_modules"
   },
   "workspaces": {
     "packages": [
