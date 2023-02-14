@@ -29,3 +29,8 @@ cd packages/apps/electron-excel-tally
 
 lerna add @glassball/tally --scope=electron-excel-tally
 
+Stage 2 is complete.
+We have successfully added the excel-table-min into react-excel-min.
+We have used the monorepo pattern with multiple repos :)
+This works and has an advantage that our project can be used in multiple repos.
+
